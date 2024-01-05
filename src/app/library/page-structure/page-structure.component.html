@@ -1,0 +1,11 @@
+@for (section of sectionslist; track section.id) {
+<section>
+  @switch (section.__component) { @case ("sections.hero") {
+  <app-hero [data]="section"></app-hero>
+  } @case ("sections.video-testimonials") {
+  <app-video-testimonials [data]="section"></app-video-testimonials>
+  } @case ("sections.custom") {
+  <app-custom-html [data]="section"></app-custom-html>
+  } @default { Default case. } }
+</section>
+}

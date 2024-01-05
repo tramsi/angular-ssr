@@ -1,0 +1,16 @@
+<section class="flex p-10">
+  <div>
+    <h1 class="text-lg mb-8 text-green-700 font-bold">{{ data.title }}</h1>
+    <p class="whitespace-pre-wrap">{{ data.description }}</p>
+  </div>
+  <div>
+    <img
+      [ngSrc]="'http://localhost:1337' + data?.media.data.attributes.url"
+      [alt]="data.media.data.attributes.alternativeText"
+      [width]="data.media.data.attributes.width"
+      [height]="data.media.data.attributes.width"
+      class="max-h-64 w-auto"
+      priority
+    />
+  </div>
+</section>

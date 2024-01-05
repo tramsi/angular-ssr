@@ -1,0 +1,13 @@
+<section class="p-10">
+  <h3 class="text-center text-lg font-bold mb-8">{{ data.title }}</h3>
+  <ul class="flex gap-20">
+    @for (media of data.media.data; track media.id) {
+    <li class="flex-1">
+      <video
+        [src]="'http://localhost:1337' + media.attributes.url"
+        controls
+      ></video>
+    </li>
+    }
+  </ul>
+</section>

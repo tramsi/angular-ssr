@@ -1,7 +1,7 @@
 .primary {
-  background-color: red;
+  @apply bg-red-500;
 }
 
 .secondary {
-  background-color: green;
+  @apply bg-green-500;
 }

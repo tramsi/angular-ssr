@@ -1,8 +1,20 @@
-<app-button [buttonStyle]="'primary'" (click)="buttonStyle = 'primary'"
-  >Primary</app-button
->
-<app-button [buttonStyle]="'secondary'" (click)="buttonStyle = 'secondary'"
-  >Secondary</app-button
->
-<app-button [buttonStyle]="buttonStyle">Dynamic</app-button>
+<ul class="flex gap-10">
+  <li
+    class="bg-gray-400 px-10 py-6 cursor-pointer"
+    [routerLink]="['/']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    الرئيسية
+  </li>
+  <li
+    *ngFor="let page of pages"
+    class="bg-gray-400 px-10 py-6 cursor-pointer"
+    [routerLink]="[page.attributes.slug]"
+    routerLinkActive="active"
+  >
+    {{ page.attributes.title }}
+  </li>
+</ul>
+
 <router-outlet></router-outlet>
